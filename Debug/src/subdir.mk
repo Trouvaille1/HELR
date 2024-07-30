@@ -23,7 +23,8 @@ CPP_DEPS += \
 src/%.o: ../src/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -I ../HEAAN/HEAAN/src -O2 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<" -pthread -std=c++11
+	# g++ -I ../HEAAN/HEAAN/src -O2 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<" -pthread -std=c++11   hanggu
+	g++ -I/home/hanggu/Tools/ntl-11.5.1/include -I../HEAAN/HEAAN/src -O2 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<" -pthread -std=c++11
 	@echo 'Finished building: $<'
 	@echo ' '
 
