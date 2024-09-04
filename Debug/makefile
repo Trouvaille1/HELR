@@ -38,13 +38,15 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: HELR
+# all: HELR
+all: clean HELR # hanggu
 
 # Tool invocations
 HELR: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L ../HEAAN/HEAAN/lib -o "HELR" $(OBJS) $(USER_OBJS) $(LIBS) -pthread -std=c++11
+	# g++ -L ../HEAAN/HEAAN/lib -o "HELR" $(OBJS) $(USER_OBJS) $(LIBS) -pthread -std=c++11
+	g++ -L ../HEAAN/HEAAN/lib -I/home/hanggu/Tools/ntl-11.5.1/include -o "HELR" $(OBJS) $(USER_OBJS) $(LIBS) -pthread -std=c++11
 	@echo 'Finished building target: $@'
 	@echo ' '
 
